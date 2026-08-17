@@ -48,7 +48,7 @@ background: linear-gradient(180deg, #07111f 0%, #0f172a 45%, #172554 100%);
 border-right: 1px solid rgba(255,255,255,0.08);
 }
 [data-testid="stSidebar"] * {
-color: #0f172a !important;
+color: white !important;
 }
 .sidebar-logo {
 text-align: center;
