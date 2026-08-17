@@ -386,7 +386,7 @@ line-height: 1.7;
 .about-card h2 {
 font-size: 19px;
 font-weight: 800;
-color: #0f172a;
+color: #111827;
 margin-bottom: 6px;
 }
 .about-card p {
