@@ -26,14 +26,20 @@ st.set_page_config(
 
 CUSTOM_CSS = """
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 /* ===== GLOBAL ===== */
+html, body, [class*="css"] {
+font-family: 'Inter', 'Segoe UI', sans-serif;
+}
 .stApp {
-background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.08), transparent 35%), #f5f7fb;
+background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.10), transparent 40%), #eef2fb;
 }
 .block-container {
-padding-top: 2rem;
+padding-top: 3.2rem;
 padding-bottom: 2rem;
-max-width: 1500px;
+max-width: 1400px;
+margin: 0 auto;
 }
 
 /* ===== SIDEBAR ===== */
@@ -92,12 +98,14 @@ line-height: 1.6;
 .main-header {
 position: relative;
 overflow: hidden;
-background: linear-gradient(135deg, #07111f 0%, #172554 45%, #1d4ed8 100%);
-padding: 32px 35px;
-border-radius: 22px;
+background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #2563eb 100%);
+padding: 38px 35px;
+border-radius: 24px;
 color: white;
-margin-bottom: 28px;
-box-shadow: 0 15px 40px rgba(15, 23, 42, 0.18);
+margin-top: 18px;
+margin-bottom: 32px;
+text-align: center;
+box-shadow: 0 20px 45px rgba(29, 78, 216, 0.22);
 }
 .main-header:after {
 content: "";
@@ -107,34 +115,36 @@ height: 230px;
 right: -70px;
 top: -90px;
 border-radius: 50%;
-background: rgba(6, 182, 212, 0.18);
+background: rgba(255,255,255,0.10);
 }
 .main-header h1 {
 position: relative;
 z-index: 2;
 margin: 0;
-font-size: 36px;
+font-size: 34px;
 font-weight: 800;
 letter-spacing: -0.5px;
 }
 .main-header p {
 position: relative;
 z-index: 2;
-margin-top: 8px;
-color: #bfdbfe;
+margin: 10px auto 0 auto;
+max-width: 560px;
+color: #dbeafe;
 font-size: 15px;
 }
 .header-badge {
 position: relative;
 z-index: 2;
 display: inline-block;
-margin-top: 15px;
-padding: 7px 13px;
+margin-top: 16px;
+padding: 7px 16px;
 border-radius: 20px;
-background: rgba(255,255,255,0.10);
-border: 1px solid rgba(255,255,255,0.15);
+background: rgba(255,255,255,0.15);
+border: 1px solid rgba(255,255,255,0.22);
 font-size: 12px;
-color: #e0f2fe;
+font-weight: 600;
+color: #eff6ff;
 }
 
 /* ===== SECTION TITLES ===== */
@@ -143,30 +153,33 @@ color: #0f172a;
 font-size: 22px;
 font-weight: 800;
 margin-top: 10px;
-margin-bottom: 18px;
+margin-bottom: 6px;
+text-align: center;
 }
 .section-subtitle {
 color: #64748b;
 font-size: 13px;
-margin-top: -12px;
-margin-bottom: 20px;
+margin-top: 0;
+margin-bottom: 24px;
+text-align: center;
 }
 
 /* ===== KPI CARDS ===== */
 .metric-card {
 position: relative;
 overflow: hidden;
-background: rgba(255,255,255,0.90);
+background: linear-gradient(160deg, #ffffff, #eef4ff);
 padding: 22px;
 min-height: 145px;
-border-radius: 18px;
-border: 1px solid rgba(226,232,240,0.9);
-box-shadow: 0 8px 25px rgba(15,23,42,0.06);
+border-radius: 20px;
+border: 1px solid #dbeafe;
+text-align: center;
+box-shadow: 0 10px 28px rgba(29, 78, 216, 0.08);
 transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .metric-card:hover {
 transform: translateY(-4px);
-box-shadow: 0 14px 35px rgba(15,23,42,0.11);
+box-shadow: 0 16px 38px rgba(29, 78, 216, 0.14);
 }
 .metric-icon {
 width: 43px;
@@ -174,6 +187,8 @@ height: 43px;
 display: flex;
 align-items: center;
 justify-content: center;
+margin-left: auto;
+margin-right: auto;
 border-radius: 12px;
 background: linear-gradient(135deg, #dbeafe, #cffafe);
 font-size: 20px;
@@ -187,7 +202,7 @@ text-transform: uppercase;
 letter-spacing: 0.5px;
 }
 .metric-value {
-color: #0f172a;
+color: #1d4ed8;
 font-size: 27px;
 font-weight: 800;
 margin-top: 4px;
@@ -200,32 +215,34 @@ margin-top: 4px;
 
 /* ===== GLASS CARD ===== */
 .glass-card {
-background: rgba(255,255,255,0.88);
-border: 1px solid rgba(226,232,240,0.9);
-border-radius: 18px;
-padding: 25px;
-box-shadow: 0 8px 25px rgba(15,23,42,0.06);
-margin-bottom: 20px;
+background: linear-gradient(160deg, #ffffff, #f0f5ff);
+border: 1px solid #dbeafe;
+border-radius: 20px;
+padding: 26px;
+box-shadow: 0 10px 28px rgba(29, 78, 216, 0.08);
+margin-bottom: 22px;
 }
 
 /* ===== FORM CONTAINER ===== */
 .form-header {
 display: flex;
+flex-direction: column;
 align-items: center;
-gap: 12px;
-margin-bottom: 20px;
+text-align: center;
+gap: 10px;
+margin-bottom: 22px;
 }
 .form-icon {
-width: 45px;
-height: 45px;
-border-radius: 12px;
+width: 48px;
+height: 48px;
+border-radius: 14px;
 display: flex;
 align-items: center;
 justify-content: center;
 background: linear-gradient(135deg, #2563eb, #06b6d4);
 color: white;
-font-size: 21px;
-box-shadow: 0 7px 20px rgba(37,99,235,0.25);
+font-size: 22px;
+box-shadow: 0 8px 22px rgba(37,99,235,0.28);
 }
 .form-title {
 font-size: 18px;
@@ -243,21 +260,21 @@ div[data-baseweb="select"] { border-radius: 10px; }
 input { border-radius: 10px !important; }
 
 /* ===== BUTTON ===== */
-.stButton > button {
+.stButton > button, .stFormSubmitButton > button {
 width: 100%;
 border: none;
-border-radius: 12px;
-padding: 14px 20px;
+border-radius: 14px;
+padding: 15px 20px;
 font-size: 15px;
 font-weight: 800;
 color: white;
-background: linear-gradient(135deg, #1d4ed8, #2563eb, #0891b2);
-box-shadow: 0 8px 20px rgba(37,99,235,0.25);
+background: linear-gradient(135deg, #1e3a8a, #2563eb, #0891b2);
+box-shadow: 0 10px 26px rgba(37,99,235,0.30);
 transition: all 0.25s ease;
 }
-.stButton > button:hover {
+.stButton > button:hover, .stFormSubmitButton > button:hover {
 transform: translateY(-2px);
-box-shadow: 0 12px 28px rgba(37,99,235,0.35);
+box-shadow: 0 14px 32px rgba(37,99,235,0.40);
 color: white;
 }
 
@@ -265,13 +282,13 @@ color: white;
 .prediction-card {
 position: relative;
 overflow: hidden;
-background: linear-gradient(135deg, #0f172a, #1d4ed8, #0891b2);
-padding: 40px 35px;
-border-radius: 22px;
+background: linear-gradient(135deg, #1e3a8a, #1d4ed8, #0891b2);
+padding: 42px 35px;
+border-radius: 26px;
 color: white;
 text-align: center;
-margin-top: 25px;
-box-shadow: 0 15px 40px rgba(37,99,235,0.25);
+margin-top: 28px;
+box-shadow: 0 20px 45px rgba(37,99,235,0.28);
 }
 .prediction-card.approved {
 background: linear-gradient(135deg, #052e16, #16a34a, #059669);
@@ -348,18 +365,22 @@ line-height: 1.6;
 
 /* ===== MODEL / ABOUT CARDS ===== */
 .model-card {
-background: white;
-padding: 25px;
-border-radius: 18px;
-border: 1px solid #e2e8f0;
-box-shadow: 0 8px 25px rgba(15,23,42,0.06);
+background: linear-gradient(160deg, #ffffff, #f0f5ff);
+padding: 26px;
+border-radius: 20px;
+border: 1px solid #dbeafe;
+box-shadow: 0 10px 28px rgba(29, 78, 216, 0.08);
+}
+.model-card h3 {
+text-align: center;
+color: #0f172a;
 }
 .about-card {
-background: white;
-border-radius: 18px;
-padding: 28px;
-border: 1px solid #e2e8f0;
-box-shadow: 0 8px 25px rgba(15,23,42,0.06);
+background: linear-gradient(160deg, #ffffff, #f0f5ff);
+border-radius: 20px;
+padding: 30px;
+border: 1px solid #dbeafe;
+box-shadow: 0 10px 28px rgba(29, 78, 216, 0.08);
 line-height: 1.7;
 }
 .about-card h2 {
@@ -731,9 +752,9 @@ elif page == "🔮 Loan Prediction":
         if is_approved:
             st.markdown(
                 f"""<div class="prediction-card approved">
-<div class="prediction-icon">✅</div>
-<h2>Congratulations! Loan Approved</h2>
-<p>Based on the applicant's financial profile and credit history, the model predicts a high likelihood of successful loan repayment.</p>
+<div class="prediction-icon">🎉</div>
+<h2>Congratulations!</h2>
+<p>Your loan application has been <strong>APPROVED</strong>.</p>
 <div class="prediction-status">APPROVAL CONFIDENCE • {approval_probability * 100:.1f}%</div>
 <div class="prediction-meta">
 <div class="prediction-meta-item"><div class="label">Loan Amount</div><div class="value">${loan_amount:,.0f}</div></div>
@@ -746,9 +767,9 @@ elif page == "🔮 Loan Prediction":
         else:
             st.markdown(
                 f"""<div class="prediction-card rejected">
-<div class="prediction-icon">⛔</div>
-<h2>Unfortunately, Loan Not Approved</h2>
-<p>Based on the applicant's financial profile and credit history, the model predicts a high risk of loan default at this time.</p>
+<div class="prediction-icon">😔</div>
+<h2>We are sorry.</h2>
+<p>Your loan application has <strong>NOT BEEN APPROVED</strong>.</p>
 <div class="prediction-status">APPROVAL CONFIDENCE • {approval_probability * 100:.1f}%</div>
 <div class="prediction-meta">
 <div class="prediction-meta-item"><div class="label">Loan Amount</div><div class="value">${loan_amount:,.0f}</div></div>
