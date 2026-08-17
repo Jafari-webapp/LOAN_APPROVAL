@@ -452,6 +452,12 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
+/* ===== FORM LABELS ===== */
+label {
+    font-weight: 600;
+    color: #2563eb; /* bright blue */
+}
+
 
 /* ===== FOOTER ===== */
 .footer {
