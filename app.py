@@ -358,7 +358,7 @@ background: linear-gradient(135deg, #eff6ff, #ecfeff);
 border-left: 4px solid #2563eb;
 padding: 18px;
 border-radius: 12px;
-color: #0f172a;
+color: #16a34a;
 font-size: 13px;
 line-height: 1.6;
 }
