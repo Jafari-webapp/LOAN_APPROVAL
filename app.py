@@ -1,7 +1,7 @@
 # ========================================
 # LOAN PREDICTION SYSTEM - PROFESSIONAL UI
 # ==========================================
-# Fixed: HTML blocks are now flush-left (no leading indentation).
+# Fixed: HTML blocks are now flush-left (no leading indentation)
 # Streamlit's markdown parser treats lines indented 4+ spaces as
 # literal "code blocks", which is why the HTML tags were showing
 # up as raw text on screen instead of being rendered. Removing the
@@ -48,7 +48,7 @@ background: linear-gradient(180deg, #07111f 0%, #0f172a 45%, #172554 100%);
 border-right: 1px solid rgba(255,255,255,0.08);
 }
 [data-testid="stSidebar"] * {
-color: white !important;
+color: #0f172a !important;
 }
 .sidebar-logo {
 text-align: center;
