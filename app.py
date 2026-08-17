@@ -453,9 +453,20 @@ align-items: center;
 justify-content: center;
 }
 /* ===== FORM LABELS ===== */
-label {
-    font-weight: 600;
-    color: #2563eb; /* bright blue */
+/* FIX: original selector (plain `label`) was being overridden by
+   Streamlit's own default label styles on number/select inputs,
+   which is why labels were showing up white-on-white. Targeting
+   Streamlit's actual label wrapper (stWidgetLabel) with !important
+   makes the blue color win, without touching anything else. */
+label,
+[data-testid="stWidgetLabel"] label,
+[data-testid="stWidgetLabel"] p,
+[data-testid="stWidgetLabel"] span,
+.stNumberInput label,
+.stSelectbox label,
+.stTextInput label {
+color: #2563eb !important;
+font-weight: 600 !important;
 }
 
 
